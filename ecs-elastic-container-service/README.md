@@ -1,8 +1,4 @@
-# 🐳 ECS (Elastic Container Service) - Guia Completo Estruturado
-
-> **Sobre este repositório**: Estudos aprofundados de AWS ECS seguindo padrões de produção e boas práticas do **Well-Architected Framework**.
-
-## 📚 Índice de Módulos
+# 🐳 ECS (Elastic Container Service)
 
 Este guia foi dividido em 9 módulos especializados para facilitar aprendizado focado e referência rápida.
 
@@ -114,70 +110,6 @@ Este guia foi dividido em 9 módulos especializados para facilitar aprendizado f
 
 ---
 
-## 🎯 Roteiros de Aprendizado
-
-### Para Iniciantes
-1. [Introdução ao ECS](01-introducao-ecs.md) - Entender conceitos
-2. [Arquitetura e Componentes](02-arquitetura-componentes.md) - Ver arquitetura real
-3. [Comparativo: Cluster vs Service vs Task](09-comparativo-cluster-service-task.md) - Esclarecer cada peça
-4. [Comparação com Alternativas](03-comparacao-alternativas.md) - Justificar decisão
-5. [Segurança em Produção](04-seguranca-producao.md) - Implementar direito
-
-### Para Implementação
-1. [Arquitetura e Componentes](02-arquitetura-componentes.md) - Código Terraform
-2. [Comparativo: Cluster vs Service vs Task](09-comparativo-cluster-service-task.md) - Referência rápida
-3. [Segurança em Produção](04-seguranca-producao.md) - IAM + Secrets
-4. [CI/CD com GitHub Actions](06-cicd-github-actions.md) - Deployments
-5. [Auto Scaling](05-auto-scaling.md) - Performance automático
-6. [Well-Architected Framework](07-well-architected.md) - Validar design
-
-### Para Troubleshooting
-1. [Comparativo: Cluster vs Service vs Task](09-comparativo-cluster-service-task.md) - Entender o que muda
-2. [Troubleshooting](08-troubleshooting.md) - Encontrar problema
-3. [Arquitetura e Componentes](02-arquitetura-componentes.md) - Entender componentes
-4. [Auto Scaling](05-auto-scaling.md) - Se é scaling issue
-5. [Segurança em Produção](04-seguranca-producao.md) - Se é security issue
-
----
-
-## 🛠️ Padrão de Código
-
-Todos os exemplos de código seguem as convenções abaixo:
-
-### Terraform
-```hcl
-# ✅ RECOMENDADO
-resource "aws_ecs_service" "app" {
-  desired_count = 2  # HA mínima
-  launch_type   = "FARGATE"
-}
-
-# ❌ ANTI-PADRÃO
-desired_count = 1  # Single point of failure
-```
-
-### Best Practices
-- **Sempre multi-AZ**: Mínimo 2 AZs para HA
-- **Sempre health checks**: Task + ALB
-- **Nunca hardcode secrets**: Usar Secrets Manager
-- **Sempre tags**: Para cost allocation
-- **Sempre IAM Roles**: Nunca credenciais hardcoded
-- **Sempre VPC privado**: Tasks não devem ter IP público
-
----
-
-## 📊 Matriz Rápida
-
-### Quando Usar ECS?
-
-| Use ECS Se | Senão, Use |
-|------------|-----------|
-| APIs REST variáveis | Lambda (functions < 15min) |
-| Microserviços < 50 | EKS (> 100 serviços) |
-| Batch jobs variados | Batch, Lambda |
-| Containerizado | EC2 direto (sem container) |
-| Demanda previsível | EC2 (24/7 constant) |
-
 ### Custos Estimados (por mês)
 
 | Serviço | Task Size | Tasks | Custo |
@@ -265,17 +197,3 @@ A: Use `aws ecs execute-command` (ECS Exec) ou veja logs em CloudWatch.
 A: Fargate 256/512: ~$0.04536/hour. 2 tasks × 730h = ~$67/mês.
 
 ---
-
-## ✍️ Notas Finais
-
-Este guia assume você já conhece:
-- AWS IAM (roles, policies)
-- VPC, subnets, security groups
-- Docker/containers básico
-- Terraform (ou CloudFormation)
-
-Se não conhece estes, estude primeiro para melhor aproveitar este material.
-
-**Objetivo**: Passar de "hello world" em ECS para **production-ready architecture** alinhada com Well-Architected Framework.
-
-Boa sorte! 🚀
