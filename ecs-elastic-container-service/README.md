@@ -4,7 +4,7 @@
 
 ## 📚 Índice de Módulos
 
-Este guia foi dividido em 8 módulos especializados para facilitar aprendizado focado e referência rápida.
+Este guia foi dividido em 9 módulos especializados para facilitar aprendizado focado e referência rápida.
 
 ### 1. [📖 Introdução ao ECS](01-introducao-ecs.md)
 - O que é ECS e por que usar
@@ -28,7 +28,20 @@ Este guia foi dividido em 8 módulos especializados para facilitar aprendizado f
 
 ---
 
-### 3. [⚖️ Comparação com Alternativas](03-comparacao-alternativas.md)
+### 3. [🔍 Comparativo: Cluster vs Service vs Task](09-comparativo-cluster-service-task.md)
+- Distinção clara entre Cluster, Service e Task Definition
+- Tabela comparativa de responsabilidades
+- Quando atualizar cada componente
+- Relacionamento e fluxo entre componentes
+- Exemplos Terraform completos
+- Erros comuns e anti-patterns
+- Analogias com Kubernetes e mundo real
+
+**Leia se**: Quer entender nitidamente qual é o papel de cada componente ECS e evitar confusões.
+
+---
+
+### 4. [⚖️ Comparação com Alternativas](03-comparacao-alternativas.md)
 - Matriz de decisão: Lambda vs ECS Fargate vs ECS EC2 vs EKS
 - Análise detalhada de cada opção
 - Matriz de trade-offs
@@ -39,7 +52,7 @@ Este guia foi dividido em 8 módulos especializados para facilitar aprendizado f
 
 ---
 
-### 4. [🔐 Segurança em Produção](04-seguranca-producao.md)
+### 5. [🔐 Segurança em Produção](04-seguranca-producao.md)
 - IAM Roles: Execution Role vs Task Role
 - Least privilege (OBRIGATÓRIO)
 - Secrets Management com Secrets Manager
@@ -52,7 +65,7 @@ Este guia foi dividido em 8 módulos especializados para facilitar aprendizado f
 
 ---
 
-### 5. [📈 Auto Scaling](05-auto-scaling.md)
+### 6. [📈 Auto Scaling](05-auto-scaling.md)
 - Target Tracking Scaling (predefinido)
 - Scaling baseado em CPU, memória, requisições
 - Métricas customizadas
@@ -64,7 +77,7 @@ Este guia foi dividido em 8 módulos especializados para facilitar aprendizado f
 
 ---
 
-### 6. [🚀 CI/CD com GitHub Actions](06-cicd-github-actions.md)
+### 7. [🚀 CI/CD com GitHub Actions](06-cicd-github-actions.md)
 - Pipeline GitHub Actions completo
 - OIDC Federation (zero credentials)
 - Build, push ECR, deploy ECS
@@ -76,7 +89,7 @@ Este guia foi dividido em 8 módulos especializados para facilitar aprendizado f
 
 ---
 
-### 7. [🏛️ Well-Architected Framework](07-well-architected.md)
+### 8. [🏛️ Well-Architected Framework](07-well-architected.md)
 - Alinhamento com 5 pilares AWS:
   - Operational Excellence (observabilidade, deployment)
   - Security (IAM, data protection, network)
@@ -89,7 +102,7 @@ Este guia foi dividido em 8 módulos especializados para facilitar aprendizado f
 
 ---
 
-### 8. [🔧 Troubleshooting](08-troubleshooting.md)
+### 9. [🔧 Troubleshooting](08-troubleshooting.md)
 - Task não inicia: diagnóstico e soluções
 - Health check failures
 - Custos inesperados
@@ -106,21 +119,24 @@ Este guia foi dividido em 8 módulos especializados para facilitar aprendizado f
 ### Para Iniciantes
 1. [Introdução ao ECS](01-introducao-ecs.md) - Entender conceitos
 2. [Arquitetura e Componentes](02-arquitetura-componentes.md) - Ver arquitetura real
-3. [Comparação com Alternativas](03-comparacao-alternativas.md) - Justificar decisão
-4. [Segurança em Produção](04-seguranca-producao.md) - Implementar direito
+3. [Comparativo: Cluster vs Service vs Task](09-comparativo-cluster-service-task.md) - Esclarecer cada peça
+4. [Comparação com Alternativas](03-comparacao-alternativas.md) - Justificar decisão
+5. [Segurança em Produção](04-seguranca-producao.md) - Implementar direito
 
 ### Para Implementação
 1. [Arquitetura e Componentes](02-arquitetura-componentes.md) - Código Terraform
-2. [Segurança em Produção](04-seguranca-producao.md) - IAM + Secrets
-3. [CI/CD com GitHub Actions](06-cicd-github-actions.md) - Deployments
-4. [Auto Scaling](05-auto-scaling.md) - Performance automático
-5. [Well-Architected Framework](07-well-architected.md) - Validar design
+2. [Comparativo: Cluster vs Service vs Task](09-comparativo-cluster-service-task.md) - Referência rápida
+3. [Segurança em Produção](04-seguranca-producao.md) - IAM + Secrets
+4. [CI/CD com GitHub Actions](06-cicd-github-actions.md) - Deployments
+5. [Auto Scaling](05-auto-scaling.md) - Performance automático
+6. [Well-Architected Framework](07-well-architected.md) - Validar design
 
 ### Para Troubleshooting
-1. [Troubleshooting](08-troubleshooting.md) - Encontrar problema
-2. [Arquitetura e Componentes](02-arquitetura-componentes.md) - Entender componentes
-3. [Auto Scaling](05-auto-scaling.md) - Se é scaling issue
-4. [Segurança em Produção](04-seguranca-producao.md) - Se é security issue
+1. [Comparativo: Cluster vs Service vs Task](09-comparativo-cluster-service-task.md) - Entender o que muda
+2. [Troubleshooting](08-troubleshooting.md) - Encontrar problema
+3. [Arquitetura e Componentes](02-arquitetura-componentes.md) - Entender componentes
+4. [Auto Scaling](05-auto-scaling.md) - Se é scaling issue
+5. [Segurança em Produção](04-seguranca-producao.md) - Se é security issue
 
 ---
 
